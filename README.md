@@ -16,3 +16,12 @@ $ npm run serve
 ```
 
 The development server will run on port 8080 by default. If that port is already in use on your machine, the next free port will be used.
+
+## 问题
+1. 解决骨架图端口报错
+```javascript
+if (!this.server) {
+  const server = this.server = new Server(this.options) // eslint-disable-line no-multi-assign
+  server.listen().catch(err => server.log.warn(err))
+}
+```

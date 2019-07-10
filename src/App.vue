@@ -15,6 +15,9 @@ export default {
 </script>
 
 <style lang="stylus">
+body
+  max-width 750px
+  margin 0 auto
 #app
   font-family 'Avenir', Helvetica, Arial, sans-serif
   -webkit-font-smoothing antialiased
