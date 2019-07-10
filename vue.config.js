@@ -1,6 +1,10 @@
 const { SkeletonPlugin } = require('page-skeleton-webpack-plugin')
 const path = require('path')
 
+function resolve(dir) {
+  return path.join(__dirname, dir)
+}
+
 module.exports = {
   configureWebpack: {
     plugins: [
@@ -51,6 +55,15 @@ module.exports = {
         logTime: true
       })
     ],
+  },
+  configureWebpack: {
+    // provide the app's title in webpack's name field, so that
+    // it can be accessed in index.html to inject the correct title.
+    resolve: {
+      alias: {
+        '@': resolve('src')
+      }
+    }
   },
   chainWebpack: (config) => {   // 解决vue-cli3脚手架创建的项目压缩html 干掉<!-- shell -->导致骨架屏不生效
     if (process.env.NODE_ENV !== 'development') {
