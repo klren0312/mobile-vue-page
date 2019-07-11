@@ -5,3 +5,6 @@
   box-sizing: border-box;
   font-family: Helvetica,Tahoma,Arial,PingFang SC,Hiragino Sans GB,Heiti SC,Microsoft YaHei,WenQuanYi Micro Hei;
 }
+span, p, button, a{
+  font-size: 0.24rem;
+}
