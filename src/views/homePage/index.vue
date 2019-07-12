@@ -2,7 +2,7 @@
   <div>
     <div class="header"></div>
     <div class="feature-container">
-      <f-card v-for="(v, i) in category" :key="i" :category="v" @toForm="toForm" @toExample="toExample"></f-card>
+      <f-card v-for="(v, i) in category" :key="i" :category="v" :theId="i" @toForm="toForm" @toExample="toExample"></f-card>
     </div>
     <div class="info-title">
       <div class="line"></div>

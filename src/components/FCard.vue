@@ -9,7 +9,9 @@
     </div>
     <div class="card-right-img">
       <span class="space"></span>
-      <img class="card-img" src="../assets/feature1.png" alt="功能一">
+      <img class="card-img" src="../assets/feature1.png" v-if="theId === 1" alt="功能">
+      <img class="card-img" src="../assets/feature2.png" v-else-if="theId === 2" alt="功能">
+      <img class="card-img" src="../assets/feature3.png" v-else alt="功能">
     </div>
   </div>
 </template>
@@ -30,6 +32,9 @@
           tags: ['组合查询，更全，更准，更优惠', '多维度网黑查询，多头借贷检测'],
           price: '39.90'
         }
+      },
+      theId: {
+        type: Number
       }
     },
     methods: {
