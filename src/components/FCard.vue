@@ -1,10 +1,10 @@
 <template>
-  <div class="f-card">
+  <div class="f-card" @click="goToForm(category.category_name)">
     <div class="title">{{category.category_name}}</div>
     <div class="tip" v-for="(v, i) in category.tags" :key="i">{{v}}</div>
     <div class="card-btn">
       <md-button class="start-btn" type="primary" inline>开始检测</md-button>
-      <a class="example-link" href="javascript:;">样例</a>
+      <a class="example-link" href="javascript:;" @click.stop="goToExample(category.category_name)">样例</a>
       <span class="price-text">{{category.price}} 元/次</span>
     </div>
     <div class="card-right-img">
@@ -30,6 +30,14 @@
           tags: ['组合查询，更全，更准，更优惠', '多维度网黑查询，多头借贷检测'],
           price: '39.90'
         }
+      }
+    },
+    methods: {
+      goToForm (name) {
+        this.$emit('toForm', name)
+      },
+      goToExample (name) {
+        this.$emit('toExample', name)
       }
     }
   }
